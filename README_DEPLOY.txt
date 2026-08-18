@@ -33,3 +33,12 @@ v44 search UX fix:
 - Pencarian Financial memakai debounce 220 ms dan mempertahankan focus/caret setelah hasil dirender ulang.
 - Perbaikan yang sama diterapkan ke pencarian Riwayat dan Kategori.
 - Escape mengosongkan pencarian dengan cepat.
+
+
+V47 — Customizable Widget Dashboard
+- Dashboard modular 12-column grid.
+- Atur Widget: show/hide, ukuran 1/3, 1/2, 2/3, penuh, urutkan dengan drag & drop.
+- Preset Default, Ringkas, Keuangan, dan Portofolio Aset.
+- Grafik penerimaan vs pengeluaran, komposisi aset, tren aset, saldo per sumber dana, dan pengeluaran terbesar.
+- Layout dashboard tersimpan pada meta Firestore user.
+- Angka dashboard memakai format ringkas juta rupiah. Piutang tetap terpisah dari Total Aset.
