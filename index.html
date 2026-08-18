@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Keuangan Keluarga — Planner 2016–2030</title>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8yp4c2R80Kn4Z8NTSRyMA2Fd33n5dQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="./styles.css?v=43">
+
+<style id="v30-overrides">
+/* v30: konsistensi tipografi Reksadana & Logam Mulia */
+.mf-grid-row,.gold-grid-row{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif!important;font-size:11.5px!important;line-height:1.22!important}
+.mf-grid-head,.gold-grid-head{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif!important;font-size:9.5px!important;line-height:1.15!important;letter-spacing:.035em!important}
+.mf-name,.gold-grid-row .gold-desc-label{font-size:11.5px!important;line-height:1.22!important;font-weight:800!important}
+.mf-num,.mf-current,.mf-diff,.gold-grid-row .weight,.gold-grid-row .money,.gold-grid-row .current{font-size:11.5px!important;line-height:1.2!important}
+.mf-nav-value{font-size:11px!important}.mf-nav-source,.mf-nav-date,.gold-price-source,.gold-gain{font-size:8.8px!important;line-height:1.15!important}
+.mf-grid-row,.gold-grid-row{min-height:43px!important;padding-top:7px!important;padding-bottom:7px!important}
+
+/* Piutang sebagai ledger cicilan */
+.receivable-wrap{border:1px solid #f2d5c5;border-radius:12px;overflow:hidden;background:#fffdfc}
+.receivable-head,.receivable-row{display:grid;grid-template-columns:76px minmax(220px,1.55fr) 112px 142px 118px 118px 82px 94px;align-items:center;column-gap:7px}
+.receivable-head{padding:7px 9px;background:#fff4ee;border-bottom:1px solid #f2d5c5;text-transform:uppercase;letter-spacing:.035em;color:var(--muted);font-size:9.5px;font-weight:800}
+.receivable-head>div:nth-child(n+3):not(:nth-last-child(-n+2)){text-align:right}.receivable-head>div:nth-last-child(-n+2){text-align:center}
+.receivable-row{padding:7px 9px;border-bottom:1px solid #f6e7df;min-height:45px;font-size:11.5px;line-height:1.2;background:#fffdfc}
+.receivable-row:last-child{border-bottom:0}.receivable-row>div{min-width:0}.receivable-name{font-weight:800;color:#01204E;overflow-wrap:anywhere}.receivable-money{text-align:right;font-weight:800;color:#01204E;white-space:nowrap}.receivable-plan{text-align:right;font-size:10px;color:#5f6e7f;line-height:1.25}.receivable-plan b{display:block;color:#01204E;font-size:11px}.receivable-paid{text-align:right;color:#F85525;font-weight:800;white-space:nowrap}.receivable-remaining{text-align:right;color:#01204E;font-weight:900;white-space:nowrap}
+.receivable-status{display:inline-flex;justify-content:center;align-items:center;padding:4px 7px;border-radius:999px;font-size:9px;font-weight:900;white-space:nowrap}.receivable-status.active{background:#fff0e8;color:#b43b17}.receivable-status.paid{background:#e7f7f4;color:#016b76}
+.receivable-actions{display:flex;justify-content:center;gap:3px}.receivable-pay-btn{width:25px;height:25px;border:1px solid #f2c6b1;border-radius:8px;background:#fff0e8;color:#F85525;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}.receivable-pay-btn:hover{background:#ffe4d6}.receivable-pay-btn:disabled{opacity:.4;cursor:not-allowed}.receivable-pay-btn .ui-svg{width:13px;height:13px}
+.receivable-total{background:#fff3ea;font-weight:900}.receivable-total .receivable-name{font-weight:900}.receivable-progress{height:4px;background:#f2e5dc;border-radius:99px;overflow:hidden;margin-top:4px}.receivable-progress>span{display:block;height:100%;background:#F85525;border-radius:inherit}.receivable-row.is-paid{opacity:.72}.receivable-row.is-paid .receivable-progress>span{background:#028391}
+.receivable-empty{padding:14px;text-align:center;color:var(--muted);font-size:10.5px}
+.receivable-summary{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px;padding:8px 10px;border:1px solid #f2d5c5;border-radius:10px;background:#fff7f2}.receivable-summary b{color:#01204E}.receivable-summary .settled{color:#028391}.receivable-summary .outstanding{color:#F85525}
+.receivable-payment-list{display:grid;gap:6px;margin-top:10px}.receivable-payment-item{display:grid;grid-template-columns:82px 1fr 120px 30px;gap:7px;align-items:center;padding:6px 7px;border:1px solid var(--line);border-radius:8px;background:#fff}.receivable-payment-item .amt{text-align:right;font-weight:800;color:#F85525}.receivable-payment-del{border:0;background:transparent;color:#F85525;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.receivable-modal-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}.receivable-modal-stat>div{padding:8px;border:1px solid #f2d5c5;border-radius:9px;background:#fff7f2}.receivable-modal-stat span{display:block;font-size:9px;text-transform:uppercase;color:var(--muted);margin-bottom:3px}.receivable-modal-stat b{font-size:12px;color:#01204E}
+@media(max-width:1150px){.receivable-head,.receivable-row{grid-template-columns:68px minmax(190px,1.4fr) 102px 126px 105px 108px 72px 86px;column-gap:5px;font-size:10.8px}}
+</style>
+
+
+<style id="v31-overrides">
+/* v32 piutang-simple */
+/* v31: exact typography parity between Reksadana and Logam Mulia */
+.mf-gridwrap,.gold-gridwrap,.receivable-wrap{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif!important}
+.mf-grid-head,.gold-grid-head,.receivable-head{font-size:9.5px!important;line-height:1.15!important;font-weight:800!important;letter-spacing:.035em!important}
+.mf-grid-row,.gold-grid-row,.receivable-row{font-size:11.5px!important;line-height:1.22!important}
+.mf-name,.gold-grid-row .gold-desc-label,.receivable-name{font-size:11.5px!important;line-height:1.22!important;font-weight:800!important}
+.mf-num,.mf-current,.mf-diff,.gold-grid-row .weight,.gold-grid-row .money,.gold-grid-row .current,.receivable-money,.receivable-paid,.receivable-remaining{font-size:11.5px!important;line-height:1.2!important}
+.mf-nav-value{font-size:11px!important}.mf-nav-source,.mf-nav-date,.gold-price-source,.gold-gain{font-size:8.8px!important;line-height:1.15!important}
+.mf-summary,.gold-summary,.receivable-summary{font-size:11px!important}
+.mf-update,.gold-sync,.gold-app-update{font-family:inherit!important;font-size:10.5px!important;font-weight:800!important}
+/* Keep source wording compact and honest: Mandiri/Livin first where public NAV is exposed. */
+.mf-sync-status{line-height:1.35!important}
+
+/* v32: Piutang kembali sederhana — 1 baris per peminjam, cicilan dikelola lewat form/aksi */
+.piutang-simple-table{width:100%;border-collapse:collapse;table-layout:fixed;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:11.5px}
+.piutang-simple-table col.piutang-date{width:86px}.piutang-simple-table col.piutang-value{width:150px}.piutang-simple-table col.piutang-action{width:104px}
+.piutang-simple-table th{padding:7px 10px;background:#fff4ee;border-bottom:1px solid #f2d5c5;text-align:left;text-transform:uppercase;letter-spacing:.035em;font-size:9.5px;color:var(--muted);font-weight:800}
+.piutang-simple-table th:nth-last-child(-n+2){text-align:right}.piutang-simple-table th:last-child{text-align:center}
+.piutang-simple-table td{padding:8px 10px;border-bottom:1px solid #f6e7df;vertical-align:middle;background:#fffdfc}.piutang-simple-table tr:last-child td{border-bottom:0}
+.piutang-simple-table .piutang-name{font-weight:800;color:#01204E}.piutang-simple-table .piutang-plan{font-size:9.5px;color:#7b6a60;margin-top:3px;line-height:1.25}.piutang-simple-table .piutang-plan b{color:#F85525}
+.piutang-simple-table .piutang-value{text-align:right;font-weight:900;color:#01204E;white-space:nowrap}.piutang-simple-table .piutang-actions{display:flex;justify-content:center;gap:4px}
+.piutang-simple-table .piutang-update{width:26px;height:26px;border:1px solid #f2c6b1;border-radius:8px;background:#fff0e8;color:#F85525;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}.piutang-simple-table .piutang-update:hover{background:#ffe4d6}.piutang-simple-table .piutang-update:disabled{opacity:.35;cursor:not-allowed}.piutang-simple-table .piutang-update .ui-svg{width:13px;height:13px}
+.piutang-simple-table .piutang-lunas{display:inline-flex;margin-left:6px;padding:2px 6px;border-radius:999px;background:#e7f7f4;color:#016b76;font-size:8.5px;font-weight:900;vertical-align:middle}
+.piutang-simple-table .piutang-total td{background:#fff3ea;font-weight:900}.piutang-simple-table .piutang-total .piutang-name{font-weight:900}
+.piutang-form-note{font-size:10px;color:var(--muted);margin-top:4px;line-height:1.35}
+@media(max-width:760px){.piutang-simple-table col.piutang-date{width:72px}.piutang-simple-table col.piutang-value{width:122px}.piutang-simple-table col.piutang-action{width:90px}.piutang-simple-table td,.piutang-simple-table th{padding:7px 6px}}
+</style>
+</head>
+<body>
+<script>
+(function(){
+  function showBootError(message){
+    try{
+      var old=document.getElementById('bootError'); if(old) old.remove();
+      var box=document.createElement('div'); box.id='bootError';
+      box.style.cssText='position:fixed;left:16px;right:16px;bottom:16px;z-index:99999;background:#fff1ee;border:1px solid #F85525;color:#7a2410;padding:12px 14px;border-radius:12px;font:12px/1.4 Segoe UI,Arial,sans-serif;box-shadow:0 10px 30px rgba(1,32,78,.15)';
+      box.innerHTML='<b>Aplikasi gagal memuat.</b><br>'+String(message||'Unknown error').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]});
+      document.body.appendChild(box);
+    }catch(_e){}
+  }
+  window.addEventListener('error',function(e){showBootError((e.message||'Error')+(e.filename?' · '+e.filename.split('/').pop()+':'+e.lineno:''));});
+  window.addEventListener('unhandledrejection',function(e){showBootError(e.reason&&e.reason.message?e.reason.message:String(e.reason||'Promise rejected'));});
+})();
+</script>
+<div class="app">
+<aside class="side" id="side">
+  <div class="brand"><div class="mark">Rp</div><div><b>Keuangan Keluarga</b><small>Budget Planner 2016 → 2030</small></div></div>
+  <nav class="nav" id="nav">
+    <button data-view="dashboard" class="active"><i class="fa-solid fa-chart-pie"></i> &nbsp;Dashboard</button>
+    <button data-view="budget"><i class="fa-solid fa-wallet"></i> &nbsp;Financial</button>
+    <button data-view="history"><i class="fa-solid fa-clock-rotate-left"></i> &nbsp;Riwayat 2016–2025</button>
+    <button data-view="categories"><i class="fa-solid fa-tags"></i> &nbsp;Kategori</button>
+    <button data-view="backup"><i class="fa-solid fa-database"></i> &nbsp;Backup & Data</button>
+  </nav>
+  <div class="sidefoot">Perubahan tersimpan di Cloud Firestore.<div class="copyright">© 2026 Atitya Pritasari</div></div>
+</aside>
+<main class="main">
+  <header class="topbar"><div><button class="btn ghost mobilemenu" id="menuBtn">☰</button><h1 id="pageTitle">Dashboard</h1><div class="subtitle" id="pageSub">Ringkasan budget keluarga dan proyeksi arus kas</div></div><div class="topactions"><span class="chip" id="saveState">Firestore belum tersambung</span><span class="chip" id="clock"></span></div></header>
+  <section id="view"></section>
+</main>
+</div>
+<div class="overlay" id="overlay"><div class="modal" id="modal"></div></div>
+<script defer src="./data-seed.js?v=43"></script>
+<script defer src="./data-monthly-base.js?v=43"></script>
+<script defer src="./data-monthly-2026.js?v=43"></script>
+<script defer src="./data-monthly-2027.js?v=43"></script>
+<script defer src="./data-monthly-2028.js?v=43"></script>
+<script defer src="./data-monthly-2029.js?v=43"></script>
+<script defer src="./data-monthly-2030.js?v=43"></script>
+<script defer src="./data-wallet.js?v=43"></script>
+<script defer src="./app.js?v=43"></script>
+</body>
+</html>
