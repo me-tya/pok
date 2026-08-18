@@ -28,3 +28,8 @@ v43 regression update:
 - Form Tambah/Edit punya Tanggal + Sumber. Tanggal default hari ini.
 - Sisa Saldo Bulan Lalu otomatis = total saldo akhir bulan sebelumnya dari ShopeePay + GoPay + Mandiri + SeaBank + Jenius.
 - Edit Budget termasuk menjadi 0 tidak lagi ditimpa baseline.
+
+v44 search UX fix:
+- Pencarian Financial memakai debounce 220 ms dan mempertahankan focus/caret setelah hasil dirender ulang.
+- Perbaikan yang sama diterapkan ke pencarian Riwayat dan Kategori.
+- Escape mengosongkan pencarian dengan cepat.

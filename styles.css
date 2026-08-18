@@ -220,3 +220,303 @@
 
 /* v42: manual NAB fallback + Mandiri-only Schroder source */
 .mf-manual-update{height:30px;padding:5px 9px;border:1px solid #F85525;border-radius:9px;background:#fff7f2;color:#F85525;font-size:10.5px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:5px}.mf-manual-update .ui-svg{width:13px;height:13px}.mf-manual-update:hover{background:#ffe9df}.mf-manual-editor{display:grid;gap:7px;margin-top:10px}.mf-manual-head,.mf-manual-row{display:grid;grid-template-columns:minmax(250px,1.6fr) 130px 160px 130px;gap:8px;align-items:center}.mf-manual-head{padding:0 4px;color:#64748b;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.03em}.mf-manual-row{padding:8px;border:1px solid #f2d3c4;border-radius:10px;background:#fffdfa}.mf-manual-row>div{min-width:0}.mf-manual-row b{display:block;color:#01204E;font-size:10.5px;line-height:1.2}.mf-manual-row small{display:block;margin-top:2px;color:#64748b;font-size:8.8px}.mf-manual-row input{width:100%;border:1px solid #ead7c9;border-radius:8px;padding:7px 8px;font-family:inherit;font-size:10.5px;text-align:right}.mf-manual-row input[type=date]{text-align:left}@media(max-width:760px){.mf-manual-head{display:none}.mf-manual-row{grid-template-columns:1fr 1fr}.mf-manual-row>div{grid-column:1/-1}}
+
+/* v45: Asset palette — navy gradient hierarchy */
+:root{
+  --asset-navy:#01204E;
+  --asset-navy-2:#173F67;
+  --asset-line:#AFC2D5;
+  --asset-head:#D9E5F0;
+  --asset-sub:#EAF1F7;
+  --asset-record:#F8FBFD;
+  --asset-record-alt:#F3F7FB;
+  --asset-soft:#EEF4F9;
+  --asset-muted:#5D7185;
+}
+.fin-section[data-kind='asset']{
+  border-color:var(--asset-line)!important;
+  background:#F2F6FA!important;
+  box-shadow:0 9px 24px rgba(1,32,78,.08)!important;
+}
+.fin-section[data-kind='asset']>summary{
+  background:var(--asset-head)!important;
+  border-bottom-color:var(--asset-line)!important;
+}
+.fin-section[data-kind='asset'] .fin-section-icon{
+  background:#F7FAFD!important;
+  color:var(--asset-navy)!important;
+  border-color:#B6C9DA!important;
+}
+.fin-section[data-kind='asset'] .fin-section-name,
+.fin-section[data-kind='asset'] .fin-sub-name,
+.fin-section[data-kind='asset'] .readonly-label,
+.fin-section[data-kind='asset'] .mf-name{
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .fin-section-meta,
+.fin-section[data-kind='asset'] .asset-derived-note,
+.fin-section[data-kind='asset'] .asset-summary-total-note{
+  color:var(--asset-muted)!important;
+}
+.fin-section[data-kind='asset'] .fin-pill,
+.fin-section[data-kind='asset'] .portfolio-badge{
+  background:#F7FAFD!important;
+  color:var(--asset-navy)!important;
+  border-color:#B9CAD9!important;
+}
+.fin-section[data-kind='asset'] .fin-subsection{
+  border-color:#BFCFDD!important;
+  background:#F7FAFC!important;
+}
+.fin-section[data-kind='asset'] .fin-subsection>summary{
+  background:var(--asset-sub)!important;
+  border-color:#C8D6E2!important;
+}
+.fin-section[data-kind='asset'] .fin-sub-icon{
+  background:#F6F9FC!important;
+  color:var(--asset-navy)!important;
+  border-color:#B7C9DA!important;
+}
+.fin-section[data-kind='asset'] .fin-add-btn,
+.fin-section[data-kind='asset'] .asset-summary-add,
+.fin-section[data-kind='asset'] .mf-update,
+.fin-section[data-kind='asset'] .gold-sync{
+  background:var(--asset-navy)!important;
+  color:#fff!important;
+  border-color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .fin-add-btn:hover,
+.fin-section[data-kind='asset'] .asset-summary-add:hover,
+.fin-section[data-kind='asset'] .mf-update:hover,
+.fin-section[data-kind='asset'] .gold-sync:hover{
+  background:var(--asset-navy-2)!important;
+}
+.fin-section[data-kind='asset'] .fin-record-table thead th,
+.fin-section[data-kind='asset'] .asset-simple-table thead th,
+.fin-section[data-kind='asset'] .gold-table thead th{
+  background:#E5EDF5!important;
+  color:#4E6377!important;
+  border-bottom-color:#C7D5E1!important;
+}
+.fin-section[data-kind='asset'] .fin-record-table tbody td,
+.fin-section[data-kind='asset'] .asset-simple-table tbody td,
+.fin-section[data-kind='asset'] .gold-table tbody td{
+  background:var(--asset-record)!important;
+  border-bottom-color:#E1E9F0!important;
+}
+.fin-section[data-kind='asset'] .fin-record-table tbody tr:nth-child(even) td,
+.fin-section[data-kind='asset'] .asset-simple-table tbody tr:nth-child(even) td,
+.fin-section[data-kind='asset'] .gold-table tbody tr:nth-child(even) td{
+  background:var(--asset-record-alt)!important;
+}
+.fin-section[data-kind='asset'] .asset-total-row td,
+.fin-section[data-kind='asset'] .mf-total,
+.fin-section[data-kind='asset'] .gold-grid-row.gold-total{
+  background:#DDE8F2!important;
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .asset-total-row .asset-value,
+.fin-section[data-kind='asset'] .asset-live-value,
+.fin-section[data-kind='asset'] .mf-current,
+.fin-section[data-kind='asset'] .mf-total .mf-current,
+.fin-section[data-kind='asset'] .gold-grid-row .current,
+.fin-section[data-kind='asset'] .gold-grid-row.gold-total .current{
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .record-action-btn.edit:hover{
+  background:#E5EDF5!important;
+  color:var(--asset-navy)!important;
+  border-color:#B7C9DA!important;
+}
+.fin-section[data-kind='asset'] .record-action-btn.delete:hover{
+  background:#EDF3F8!important;
+  color:#365B7C!important;
+  border-color:#C3D1DE!important;
+}
+
+/* Reksadana — navy hierarchy */
+.fin-section[data-kind='asset'] .mf-summary{
+  background:#E8F0F6!important;
+  border-color:#B9CAD9!important;
+}
+.fin-section[data-kind='asset'] .mf-gridwrap{
+  border-color:#BFCFDD!important;
+  background:var(--asset-record)!important;
+}
+.fin-section[data-kind='asset'] .mf-grid-head{
+  background:#E3ECF4!important;
+  border-color:#C2D1DE!important;
+}
+.fin-section[data-kind='asset'] .mf-grid-row{
+  background:var(--asset-record)!important;
+  border-color:#DFE7EE!important;
+}
+.fin-section[data-kind='asset'] .mf-grid-row:nth-child(even){
+  background:var(--asset-record-alt)!important;
+}
+.fin-section[data-kind='asset'] .mf-nav-value,
+.fin-section[data-kind='asset'] .mf-nav-source,
+.fin-section[data-kind='asset'] .mf-price-source b,
+.fin-section[data-kind='asset'] .mf-sync-status.ok{
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .mf-sync-dot{
+  background:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .mf-diff.pos{
+  color:#214E74!important;
+}
+
+/* Logam Mulia — navy hierarchy */
+.fin-section[data-kind='asset'] .gold-app-update{
+  border-color:#B8C9D8!important;
+  background:#EEF4F9!important;
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .gold-app-update:hover{
+  background:#E2EBF3!important;
+}
+.fin-section[data-kind='asset'] .gold-price-source.source-app,
+.fin-section[data-kind='asset'] .gold-price-source.source-web,
+.fin-section[data-kind='asset'] .gold-gain.pos{
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .gold-override-chip{
+  background:#E5EDF5!important;
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .gold-brand-card{
+  border-color:#C2D1DE!important;
+  background:var(--asset-record)!important;
+}
+.fin-section[data-kind='asset'] .gold-brand-head{
+  background:#E5EDF5!important;
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .gold-brand-grid .ggram{
+  background:#F0F5F9!important;
+  color:#4F6579!important;
+}
+.fin-section[data-kind='asset'] .gold-brand-grid input:focus{
+  border-color:var(--asset-navy)!important;
+  box-shadow:0 0 0 3px rgba(1,32,78,.08)!important;
+}
+
+/* Piutang / other asset cards */
+.fin-section[data-kind='asset'] .receivable-card,
+.fin-section[data-kind='asset'] .receivable-row,
+.fin-section[data-kind='asset'] .asset-summary-card{
+  border-color:#C3D2DF!important;
+  background:var(--asset-record)!important;
+}
+.fin-section[data-kind='asset'] .receivable-progress-track{
+  background:#E0E8F0!important;
+}
+.fin-section[data-kind='asset'] .receivable-progress-fill{
+  background:var(--asset-navy)!important;
+}
+
+/* Asset inputs and source dropdowns */
+.fin-section[data-kind='asset'] input:focus,
+.fin-section[data-kind='asset'] select:focus,
+.fin-section[data-kind='asset'] textarea:focus,
+.fin-section[data-kind='asset'] .row-source-select:focus{
+  border-color:var(--asset-navy)!important;
+  box-shadow:0 0 0 3px rgba(1,32,78,.08)!important;
+  outline:none!important;
+}
+
+/* v45 continued: complete navy treatment for asset portfolio widgets */
+.fin-section[data-kind='asset'] .asset-tablewrap,
+.fin-section[data-kind='asset'] .gold-gridwrap{
+  border-color:#C1D0DD!important;
+  background:var(--asset-record)!important;
+}
+.fin-section[data-kind='asset'] .gold-summary{
+  background:#E8F0F6!important;
+  border-color:#B9CAD9!important;
+}
+.fin-section[data-kind='asset'] .gold-summary .gold-metric b,
+.fin-section[data-kind='asset'] .mf-summary .gold-metric b{
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .gold-grid-head{
+  background:#E3ECF4!important;
+  border-color:#C2D1DE!important;
+  color:#4E6377!important;
+}
+.fin-section[data-kind='asset'] .gold-grid-row{
+  background:var(--asset-record)!important;
+  border-color:#DFE7EE!important;
+}
+.fin-section[data-kind='asset'] .gold-grid-row:nth-child(even){
+  background:var(--asset-record-alt)!important;
+}
+.fin-section[data-kind='asset'] .gold-grid-row.gold-plan{
+  background:#EFF4F8!important;
+}
+.fin-section[data-kind='asset'] .gold-grid-row .gold-brand-badge{
+  background:#E3ECF4!important;
+  color:var(--asset-navy)!important;
+  border:1px solid #C4D3DF!important;
+}
+.fin-section[data-kind='asset'] .gold-source{
+  color:var(--asset-muted)!important;
+}
+.fin-section[data-kind='asset'] .metric-edit-btn{
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .metric-edit-btn:hover{
+  background:#E5EDF5!important;
+}
+.fin-section[data-kind='asset'] .mf-manual-update{
+  border-color:#9FB7CB!important;
+  background:#EEF4F9!important;
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .mf-manual-update:hover{
+  background:#E1EAF2!important;
+}
+.fin-section[data-kind='asset'] .mf-manual-row{
+  border-color:#C4D3DF!important;
+  background:var(--asset-record)!important;
+}
+.fin-section[data-kind='asset'] .mf-manual-row input{
+  border-color:#C7D5E1!important;
+}
+.fin-section[data-kind='asset'] .mf-manual-row input:focus{
+  border-color:var(--asset-navy)!important;
+  box-shadow:0 0 0 3px rgba(1,32,78,.08)!important;
+}
+.fin-section[data-kind='asset'] .mf-inline-input,
+.fin-section[data-kind='asset'] .mf-fund-source,
+.fin-section[data-kind='asset'] .row-source-select,
+.fin-section[data-kind='asset'] .receivable-source-select{
+  border-color:#C5D3DF!important;
+  background:#FBFDFE!important;
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .piutang-simple-table thead th{
+  background:#E5EDF5!important;
+  color:#4E6377!important;
+  border-bottom-color:#C7D5E1!important;
+}
+.fin-section[data-kind='asset'] .piutang-simple-table tbody td{
+  background:var(--asset-record)!important;
+  border-bottom-color:#E1E9F0!important;
+}
+.fin-section[data-kind='asset'] .piutang-simple-table tbody tr:nth-child(even) td{
+  background:var(--asset-record-alt)!important;
+}
+.fin-section[data-kind='asset'] .piutang-total td{
+  background:#DDE8F2!important;
+  color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .piutang-update{
+  background:var(--asset-navy)!important;
+  color:#fff!important;
+  border-color:var(--asset-navy)!important;
+}
+.fin-section[data-kind='asset'] .piutang-update:hover{
+  background:var(--asset-navy-2)!important;
+}
