@@ -19,3 +19,12 @@ v41: Kolom Sumber + dropdown sumber dana diterapkan lintas Penerimaan, Pengeluar
 
 
 v42: Sync Schroder hanya mencoba kanal resmi Bank Mandiri/Livin (tanpa BCA/Bareksa). Jika gagal, modal Update NAB Manual otomatis dibuka.
+
+
+v43 regression update:
+- Collapsible Financial mempertahankan posisi open/closed saat CRUD/render ulang.
+- Nomor urut rincian berlanjut untuk semua record, termasuk hasil pemisahan ;.
+- Sort rincian: tanggal terbaru (default), terlama, budget, realisasi, A-Z.
+- Form Tambah/Edit punya Tanggal + Sumber. Tanggal default hari ini.
+- Sisa Saldo Bulan Lalu otomatis = total saldo akhir bulan sebelumnya dari ShopeePay + GoPay + Mandiri + SeaBank + Jenius.
+- Edit Budget termasuk menjadi 0 tidak lagi ditimpa baseline.
