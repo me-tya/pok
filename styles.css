@@ -198,3 +198,25 @@
 .formula-metric span{display:flex;align-items:center;gap:5px}.formula-metric em{font-style:normal;font-size:7.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:#8a96a4;background:#f4f6f8;border-radius:999px;padding:2px 5px}
 .mf-bulk-editor{border:1px solid #f2d3c4;border-radius:11px;overflow:hidden;margin-top:10px}.mf-bulk-head,.mf-bulk-row{display:grid;grid-template-columns:minmax(220px,1.5fr) 110px 150px 140px;gap:7px;align-items:center;padding:8px 10px}.mf-bulk-head{background:#fff4ee;color:#5f6e7f;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.035em}.mf-bulk-row{border-top:1px solid #f6e2d8;background:#fffdfb;font-size:10.5px}.mf-bulk-row:first-of-type{border-top:0}.mf-bulk-row b{color:#01204E;line-height:1.25}.mf-bulk-row input{width:100%;border:1px solid #ead8cf;border-radius:8px;padding:7px 8px;text-align:right;font:inherit;font-variant-numeric:tabular-nums;background:#fff}.mf-bulk-row input:focus{outline:0;border-color:#F85525;box-shadow:0 0 0 2px rgba(248,85,37,.08)}
 @media(max-width:800px){.mf-bulk-editor{overflow-x:auto}.mf-bulk-head,.mf-bulk-row{min-width:720px}}
+
+
+/* v41: consistent transaction Source across Penerimaan / Pengeluaran / Aset */
+.row-source-select,.mf-fund-source,.receivable-source-select{width:100%;max-width:104px;border:1px solid #dbe3ee;border-radius:8px;background:#fff;color:#01204E;padding:4px 6px;font:700 10px/1.15 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;outline:none}
+.row-source-select:focus,.mf-fund-source:focus,.receivable-source-select:focus{border-color:#028391;box-shadow:0 0 0 2px rgba(2,131,145,.10)}
+.row-source-select.source-required{border-color:#F85525;background:#fff7f2}
+.fin-record-table.has-source-col col.col-source{width:108px}
+.fin-record-table.has-source-col .sourcecell{padding-left:5px!important;padding-right:5px!important}
+.fin-record-table.has-source-col .row-source-select{max-width:98px}
+.asset-simple-table col.asset-source{width:112px}.asset-simple-table .sourcecell{padding-left:5px;padding-right:5px}.asset-simple-table .row-source-select{max-width:102px}
+.piutang-simple-table col.piutang-source{width:112px}.piutang-simple-table .receivable-source-select{max-width:102px}
+/* Gold adds Source after date */
+.gold-grid-head,.gold-grid-row{grid-template-columns:82px 92px minmax(230px,1fr) 68px 118px 130px 58px!important;column-gap:6px!important}
+.gold-grid-head>div:nth-child(n+4){text-align:right}.gold-grid-head>div:nth-child(2){text-align:left!important}.gold-grid-head>div:last-child{text-align:center!important}
+/* Reksadana adds Source after product, still no horizontal scroll on desktop */
+.mf-grid-head,.mf-grid-row{grid-template-columns:minmax(205px,1.45fr) 96px 72px 100px 105px 118px 108px 82px 42px!important;column-gap:3px!important;min-width:0!important}
+.mf-gridwrap{overflow-x:hidden!important}.mf-fund-source{max-width:92px;font-size:8.8px;padding:3px 4px}.mf-grid-head>div:nth-child(n+3):not(:last-child){text-align:right!important}.mf-grid-head>div:nth-child(2){text-align:left!important}
+@media(max-width:1180px){.mf-grid-head,.mf-grid-row{grid-template-columns:minmax(180px,1.3fr) 88px 68px 92px 96px 108px 98px 76px 40px!important}.mf-fund-source{font-size:8px}.gold-grid-head,.gold-grid-row{grid-template-columns:76px 84px minmax(190px,1fr) 60px 108px 118px 54px!important}}
+
+
+/* v42: manual NAB fallback + Mandiri-only Schroder source */
+.mf-manual-update{height:30px;padding:5px 9px;border:1px solid #F85525;border-radius:9px;background:#fff7f2;color:#F85525;font-size:10.5px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:5px}.mf-manual-update .ui-svg{width:13px;height:13px}.mf-manual-update:hover{background:#ffe9df}.mf-manual-editor{display:grid;gap:7px;margin-top:10px}.mf-manual-head,.mf-manual-row{display:grid;grid-template-columns:minmax(250px,1.6fr) 130px 160px 130px;gap:8px;align-items:center}.mf-manual-head{padding:0 4px;color:#64748b;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.03em}.mf-manual-row{padding:8px;border:1px solid #f2d3c4;border-radius:10px;background:#fffdfa}.mf-manual-row>div{min-width:0}.mf-manual-row b{display:block;color:#01204E;font-size:10.5px;line-height:1.2}.mf-manual-row small{display:block;margin-top:2px;color:#64748b;font-size:8.8px}.mf-manual-row input{width:100%;border:1px solid #ead7c9;border-radius:8px;padding:7px 8px;font-family:inherit;font-size:10.5px;text-align:right}.mf-manual-row input[type=date]{text-align:left}@media(max-width:760px){.mf-manual-head{display:none}.mf-manual-row{grid-template-columns:1fr 1fr}.mf-manual-row>div{grid-column:1/-1}}

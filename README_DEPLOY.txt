@@ -13,3 +13,9 @@ Perubahan v40:
 - Tetap mempertahankan hierarchy Pengeluaran, kolom Sumber, edit sub-sub header, Firestore, CRUD, dan fitur portfolio sebelumnya.
 
 Setelah commit, tunggu GitHub Pages selesai deploy lalu Ctrl+F5.
+
+
+v41: Kolom Sumber + dropdown sumber dana diterapkan lintas Penerimaan, Pengeluaran, dan Aset; source tersimpan ke Firestore.
+
+
+v42: Sync Schroder hanya mencoba kanal resmi Bank Mandiri/Livin (tanpa BCA/Bareksa). Jika gagal, modal Update NAB Manual otomatis dibuka.
