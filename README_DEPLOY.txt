@@ -1,13 +1,15 @@
-Keuangan Keluarga — GitHub Ready v37
+Keuangan Keluarga — GitHub Ready v40
 
-Upload SEMUA file di paket ini ke root repo GitHub Pages.
+Upload/replace SEMUA file dalam folder ini ke root repo GitHub Pages.
+Firebase config sudah tertanam di app.js.
 
-Perubahan v37:
-- Pengeluaran memakai 3 level: Sub Header → Budget Item → Rincian.
-- Budget dan Realisasi Budget Item dihitung otomatis dari rincian di bawahnya.
-- Tombol + di Sub Header menambah Budget Item/Rincian; tombol + di Budget Item menambah rincian langsung ke parent tersebut.
-- Edit rincian dapat memindahkan Budget Item.
-- Baseline 2026–2030 sudah dimigrasikan: 1.413 rincian pengeluaran memiliki Budget Item.
-- Firestore tetap menjadi database utama.
+Perubahan v40:
+- Nilai dasar Reksadana editable langsung: Unit, Harga Beli/Unit, Nilai Beli, NAB Hari Ini/Unit, Nilai Saat Ini.
+- Nilai Beli <-> Harga Beli/Unit dihitung dua arah dari Unit.
+- Nilai Saat Ini <-> NAB Hari Ini/Unit dihitung dua arah dari Unit.
+- Total Nilai Beli dan Selisih Nilai tetap formula otomatis.
+- Tombol edit ringkas pada metrik Reksadana membuka editor nilai dasar seluruh produk.
+- Nilai 0 Deposito/Asuransi pada Ringkasan Aset dapat langsung mulai diisi lewat tombol edit.
+- Tetap mempertahankan hierarchy Pengeluaran, kolom Sumber, edit sub-sub header, Firestore, CRUD, dan fitur portfolio sebelumnya.
 
-Setelah upload, tunggu GitHub Pages selesai deploy lalu Ctrl+F5.
+Setelah commit, tunggu GitHub Pages selesai deploy lalu Ctrl+F5.
