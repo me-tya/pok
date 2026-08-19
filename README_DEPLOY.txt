@@ -42,3 +42,6 @@ V47 — Customizable Widget Dashboard
 - Grafik penerimaan vs pengeluaran, komposisi aset, tren aset, saldo per sumber dana, dan pengeluaran terbesar.
 - Layout dashboard tersimpan pada meta Firestore user.
 - Angka dashboard memakai format ringkas juta rupiah. Piutang tetap terpisah dari Total Aset.
+
+
+v48 UI patch (19 Aug 2026): based directly on v47 Custom Widget Dashboard. Preserves widget show/hide, size, drag/drop, order, presets, reset layout, Firestore persistence, and all Financial/Asset features. Changes are limited to dashboard YTD default period, donut circle, storage name wrapping, Asset + color #F6DCAC, Piutang money icon #FAA968, and readability/overlap CSS.
