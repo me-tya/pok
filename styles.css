@@ -811,44 +811,15 @@
 @media(max-width:560px){.dash-summary-grid,.dash-quick-grid,.dash-portfolio-grid,.dash-line-meta{grid-template-columns:1fr}.dash-top-row,.dash-source-row{grid-template-columns:1fr}.dash-top-row strong,.dash-source-row strong{text-align:left}.dash-donut{width:170px}}
 .dash-editor-item[draggable="true"]{cursor:grab}.dash-editor-item.dragging{opacity:.45;transform:scale(.995)}.dash-editor-item.drag-over{outline:2px dashed #2F7EB6;outline-offset:2px;background:#f1f7fc}
 
+/* v48 — search/filters, currency input, multi-nominal, dashboard spacing & contrast */
+.filter-input-wrap{position:relative;display:flex;align-items:center;min-width:0}.filter-input-wrap .input{padding-right:38px}.filter-icon-btn{width:34px;height:34px;border:1px solid #d8e2eb;border-radius:10px;background:#fff;color:#60758a;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto;transition:background .15s ease,border-color .15s ease,color .15s ease,transform .15s ease}.filter-input-wrap .filter-icon-btn{position:absolute;right:5px;width:28px;height:28px;border-color:transparent;background:transparent}.filter-icon-btn:hover{background:#edf5fb;border-color:#bed0df;color:#0A2A57;transform:translateY(-1px)}.filter-icon-btn.clear-all{background:#f7fafc;color:#0A2A57}.filter-clear-control{flex:0 0 auto;min-width:auto!important}.filter-clear-control label{height:15px}.fin-toolbar .control.grow{min-width:280px}
+.money-parts-wrap{border:1px solid #d9e3ec;border-radius:13px;background:#fbfdff;padding:10px}.money-parts-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}.money-parts-head>div{min-width:0}.money-parts-head label{display:block;margin:0!important;color:#0070C0!important}.money-parts-head small{display:block;margin-top:3px;color:#6b7c8e;font-size:10px;line-height:1.35}.money-part-add{width:30px;height:30px;border:0;border-radius:10px;background:#078894;color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 14px rgba(7,136,148,.18)}.money-part-add:hover{background:#066f79}.money-part-add .ui-svg{width:15px;height:15px}.money-parts-list{display:grid;gap:7px}.money-part-row{display:grid;grid-template-columns:26px minmax(120px,.5fr) minmax(180px,1fr) 30px;gap:7px;align-items:center}.money-part-no{width:24px;height:24px;border-radius:8px;background:#e8f4f5;color:#067985;display:grid;place-items:center;font-weight:900;font-size:10px}.money-part-row input{min-width:0}.money-part-remove{width:28px;height:28px;border:1px solid #efc8b8;border-radius:8px;background:#fff8f4;color:#d6522e;cursor:pointer;font-size:18px;line-height:1}.money-part-remove:hover{background:#fff0e8}.money-parts-total{display:flex;justify-content:flex-end;align-items:center;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #d7e2eb;color:#5f7285;font-size:10.5px}.money-parts-total b{font-size:13px;color:#0070C0}
 
-/* === v48 targeted UI fixes: preserve v47 custom dashboard, improve period/readability === */
-/* Dashboard period selector and anti-overlap */
-.dash-period-control{min-width:245px}
-.dash-period-chip{white-space:normal!important;overflow-wrap:anywhere}
-.dash-widget-card,.dash-widget-body,.dash-widget-head>div:first-child,.dash-summary-card,.dash-quick-btn,.dash-portfolio-card{min-width:0}
-.dash-widget-head h3,.dash-widget-sub,.dash-widget-note,.dash-summary-card small,.dash-quick-btn b,.dash-quick-btn small,.dash-top-copy b,.dash-source-copy b,.dash-portfolio-copy b,.dash-portfolio-copy small{overflow-wrap:anywhere;word-break:normal}
-.dash-asset-leg-row{grid-template-columns:minmax(0,1fr) auto 42px!important}
-.dash-asset-leg-row span{min-width:0;overflow-wrap:anywhere}
-.dash-month-bars{grid-template-columns:repeat(var(--dash-month-count,12),minmax(18px,1fr))!important}
+/* Dashboard: breathing room + guaranteed contrast */
+.dash-heading-copy{padding-left:4px}.dash-topband{padding:12px 16px!important;border:1px solid #e3e8ed!important;border-radius:18px!important;background:linear-gradient(135deg,#fffdf9 0%,#f7fbff 100%)!important;box-shadow:0 10px 26px rgba(1,32,78,.045)!important}.dash-title{margin:4px 0 4px!important}.dash-subtitle{max-width:820px;line-height:1.45!important}.dash-filterbar{padding:12px 14px!important;gap:10px!important;align-items:flex-end!important}.dash-period-mode{min-width:260px}.dash-period-chip{padding:8px 11px!important;border-radius:11px!important;background:#edf6fb!important;color:#3f5972!important;border:1px solid #d2e2ee!important;white-space:nowrap}.dash-widget-card{overflow:hidden}.dash-widget-body{padding:16px 18px!important}.dash-widget-head{padding:14px 18px 11px!important}.dash-hero{gap:14px!important}.dash-hero-copy{padding:22px 24px!important;color:#fff!important;background:radial-gradient(circle at 88% 8%,rgba(53,183,200,.25),transparent 34%),linear-gradient(135deg,#06264d 0%,#0b3769 54%,#17689b 100%)!important}.dash-hero-copy .dash-kicker{color:#9ef0f0!important;padding-left:0!important}.dash-hero-copy h2{color:#fff!important;margin:8px 0 9px!important;padding:0!important;text-shadow:0 1px 0 rgba(0,0,0,.08)}.dash-hero-copy p{color:rgba(255,255,255,.9)!important;padding:0!important}.dash-hero-copy .dash-pill{color:#fff!important;background:rgba(255,255,255,.12)!important;border-color:rgba(255,255,255,.28)!important}.dash-summary-card{padding:15px 16px!important}.dash-summary-card b{font-size:19px!important}.dash-month-bars{overflow-x:auto;overflow-y:hidden;padding:6px 2px 3px;scrollbar-width:thin}.dash-month-col{min-width:42px}.dash-month-col label{white-space:nowrap}.dash-svg{overflow:visible}.dash-axis-text{font-size:8.5px!important}.dash-asset-mix{padding:2px 2px 4px}.dash-donut{min-width:150px}.dash-widget .btn.navy,.dash-widget .btn{font-weight:800}.dash-widget .tag{white-space:nowrap}
 
-/* Komposisi Aset: force a true circle even though an older rule still sets height:170px. */
-.dash-donut-wrap{width:100%;min-width:0}
-.dash-donut{width:min(190px,100%)!important;height:auto!important;max-width:190px!important;aspect-ratio:1 / 1!important;border-radius:50%!important;flex:0 0 auto}
-.dash-donut-center{aspect-ratio:1 / 1!important;border-radius:50%!important}
+/* global readability guardrails */
+input,select,textarea{color:#0b2444;background-color:#fff}input::placeholder,textarea::placeholder{color:#8a98a8;opacity:1}.side,.side *{box-sizing:border-box}.side .nav button{color:#dce8f6}.side .nav button.active{color:#fff}.modal{color:#0b2444}.modal h3{color:#01204E}.btn{line-height:1.2}.btn:not(.ghost):not(.danger){color:#fff}.btn.ghost{color:#01204E;background:#fff}.fin-section[data-kind='asset'] .btn:not(.ghost),.fin-section[data-kind='asset'] .fin-add-btn{color:#fff!important}
 
-/* Sisa Saldo per Sumber Dana: logo on top, full product/source name on the next row. */
-.storage-source-head{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:start!important;gap:8px!important}
-.storage-brand-wrap{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:6px!important;align-items:start!important;min-width:0!important}
-.storage-logo-box{width:min(100%,96px)!important;max-width:96px!important;flex-basis:auto!important}
-.storage-logo-box img{max-width:94px!important}
-.storage-source-name{display:block!important;max-width:none!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important;overflow-wrap:anywhere!important;line-height:1.25!important;font-size:11.5px!important;padding-right:2px}
-.storage-card-actions{grid-column:2;grid-row:1;margin-left:0!important}
-.storage-simple-value{padding-top:12px!important}
-
-/* Asset add (+) buttons: requested cream #F6DCAC while keeping non-add action buttons unchanged. */
-.fin-section[data-kind='asset'] .fin-add-btn{background:#F6DCAC!important;color:#0A2A57!important;border:1px solid #E7C477!important;box-shadow:0 5px 12px rgba(10,42,87,.10)!important}
-.fin-section[data-kind='asset'] .fin-add-btn:hover{background:#F1CF8B!important;color:#0A2A57!important;border-color:#DDB65F!important}
-.fin-section[data-kind='asset'] .fin-add-btn .ui-svg{stroke:currentColor!important}
-
-/* Piutang Update Cicilan: money icon in requested #FAA968. */
-.fin-section[data-kind='asset'] .piutang-update{background:#FFF8F0!important;color:#FAA968!important;border:1px solid #F5C896!important;box-shadow:none!important}
-.fin-section[data-kind='asset'] .piutang-update:hover{background:#FFF0DF!important;color:#E68D45!important;border-color:#FAA968!important}
-.fin-section[data-kind='asset'] .piutang-update:disabled{opacity:.4!important}
-.fin-section[data-kind='asset'] .piutang-update .ui-svg{color:#FAA968!important;stroke:#FAA968!important}
-
-@media(max-width:850px){
-  .dash-period-control{min-width:min(100%,245px);width:100%}
-  .dash-month-bars{grid-template-columns:repeat(var(--dash-month-count,12),minmax(42px,1fr))!important}
-  .dash-donut-wrap{justify-items:center!important}
-}
+@media(max-width:1100px){.dash-filterbar .control{min-width:145px}.dash-period-mode{min-width:230px}.fin-toolbar .control.grow{min-width:220px}}
+@media(max-width:760px){.money-part-row{grid-template-columns:26px 1fr 30px}.money-part-note{grid-column:2/4}.dash-filterbar{align-items:stretch!important}.dash-filterbar .control,.dash-filterbar .control.grow,.dash-period-mode{min-width:100%;width:100%}.filter-clear-control label{display:none}.filter-clear-control{align-self:flex-end}.dash-period-chip{width:100%;white-space:normal}.dash-hero-copy{padding:18px!important}.dash-widget-body{padding:14px!important}.dash-widget-head{padding:13px 14px 10px!important}}

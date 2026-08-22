@@ -43,5 +43,12 @@ V47 — Customizable Widget Dashboard
 - Layout dashboard tersimpan pada meta Firestore user.
 - Angka dashboard memakai format ringkas juta rupiah. Piutang tetap terpisah dari Total Aset.
 
-
-v48 UI patch (19 Aug 2026): based directly on v47 Custom Widget Dashboard. Preserves widget show/hide, size, drag/drop, order, presets, reset layout, Firestore persistence, and all Financial/Asset features. Changes are limited to dashboard YTD default period, donut circle, storage name wrapping, Asset + color #F6DCAC, Piutang money icon #FAA968, and readability/overlap CSS.
+V48 — Search, Currency, Multi Nominal & Dashboard Period
+- Search Financial dapat mencari uraian, sumber, budget, realisasi, dan nominal/harga termasuk format 52.495.
+- Input nilai Rupiah memformat pemisah ribuan otomatis saat mengetik; tidak perlu mengetik titik/koma manual.
+- Tombol clear search dan clear filter ditambahkan pada Financial; clear search/filter terkait juga diterapkan pada Riwayat/Kategori dan reset periode pada Dashboard.
+- Tambah/Edit Rincian Financial mendukung beberapa komponen nominal Realisasi. Tombol + menambah nominal/keterangan dan Total Realisasi dihitung otomatis.
+- Dashboard diperbaiki padding/kontras dan keterbacaan; panel gelap menggunakan teks terang dan area terang menggunakan teks gelap.
+- Filter periode Dashboard: Awal Tahun s.d. Bulan Terpilih (default YTD), Bulan Tertentu, Tahun Penuh, dan Rentang Kustom/Lintas Tahun 2026–2030.
+- Dashboard tidak lagi memutasi saldo Mandiri hanya karena dashboard dibuka/dihitung ulang; mencegah saldo sumber lain terakumulasi ke Mandiri.
+- Cache-busting asset dinaikkan ke v48.
